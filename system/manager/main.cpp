@@ -232,7 +232,7 @@ int main(int argc, char *argv[]) {
     const char *templateString = "SamuraiLogXXXXXX";
     char tempFileName[strlen(templateString) + 1];
     strcpy(tempFileName, templateString);
-    mkstemp(tempFileName);
+    mktemp(tempFileName);
     FILE *logOutput = (jsonOutput ? fopen(tempFileName, "w") : stdout);
     initLog(logOutput, gameState);
     int order[] = {0, 3, 4, 1, 2, 5, 3, 0, 1, 4, 5, 2};
