@@ -4,7 +4,7 @@ cpp:
 	cd system; make
 
 java:
-	cd java-player; ./compile.sh
+	cd java-player; javac jamurai/*.java
 
 tar: clean
 	tar zcvf ../samurai.tgz .

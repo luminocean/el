@@ -1,4 +1,10 @@
+#ifdef __STRICT_ANSI__
+#undef __STRICT_ANSI__
 #include <cstdio>
+#define __STRICT_ANSI__
+#else
+#include <cstdio>
+#endif
 #include <unordered_map>
 #include <queue>
 #include <limits>
@@ -10,6 +16,8 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <cstdlib>
+#include <memory.h>
 
 using namespace std;
 
