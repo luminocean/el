@@ -327,12 +327,23 @@ int main(int argc, char *argv[]) {
       for (int s = 0; s != 6; s++)
         scores[s] += 150;
     }
+    /*
     if (jsonOutput) {
       fclose(logOutput);
       FILE *logInput = fopen(tempFileName, "r");
       finalReport(logInput, scores);
       remove(tempFileName);
     }
+    */
+    
+    // Output final scores
+    for(int i = 0; i < 6; ++i)
+    {
+        fprintf(logOutput, "# Scores player-id: %d score: %d\n", i, scores[i]);
+    }
+    fprintf(logOutput, "# ScoresA %d\n", scoreA);
+    fprintf(logOutput, "# ScoresB %d\n", scoreB);
+    
     return 0;
   } catch (ErrorReport err) {
     fprintf(stderr, "%s\n", err.msg.c_str());
